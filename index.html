@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leo | Kanni Dog Profile</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+    linear-gradient(
+        135deg,
+        #031b34 0%,
+        #06284a 25%,
+        #0d3b66 50%,
+        #12508a 75%,
+        #1b6ca8 100%);
+    min-height:100vh;
+    color:white;
+}
+
+/* HEADER */
+
+.top-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    background:linear-gradient(
+        90deg,
+        #02111f,
+        #052747,
+        #0a4d82);
+
+    padding:20px;
+
+    text-align:center;
+
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:2px;
+
+    box-shadow:
+    0 6px 25px rgba(0,0,0,0.4);
+
+    z-index:1000;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding-top:120px;
+    padding-bottom:60px;
+}
+
+/* HERO SECTION */
+
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.05));
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    padding:50px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:24px;
+    color:#cde8ff;
+}
+
+/* SECTION TITLES */
+
+.section-title{
+    font-size:42px;
+    margin:40px 0 20px 0;
+
+    color:#d6eeff;
+
+    border-left:8px solid #4db8ff;
+
+    padding-left:15px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+/* CARDS */
+
+.card{
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.05));
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,0.35);
+}
+
+.card-title{
+    color:#7fd2ff;
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.card-value{
+    font-size:30px;
+    font-weight:800;
+}
+
+/* SPECIAL BOX */
+
+.special{
+    background:
+    linear-gradient(
+        135deg,
+        #0059ff,
+        #009dff);
+
+    padding:35px;
+
+    text-align:center;
+
+    font-size:34px;
+    font-weight:700;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+    box-shadow:
+    0 10px 30px rgba(0,120,255,0.4);
+}
+
+/* STATUS */
+
+.status-box{
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #072949,
+        #0b4678);
+
+    border-radius:20px;
+
+    padding:70px 35px 35px 35px; /* increased top padding */
+
+    margin-top:15px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.3);
+}
+.status-box p{
+    font-size:24px;
+    line-height:1.6;
+}
+
+.status{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00d26a,
+        #00a652);
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    box-shadow:
+    0 0 20px rgba(0,210,106,0.4);
+}
+
+/* STICKY HEADER */
+
+.sticky{
+    position:sticky;
+    top:90px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f5ea5,
+        #3ca4ff);
+
+    padding:18px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,0.3);
+
+    z-index:500;
+}
+
+/* ROUTINE */
+
+.routine-item{
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.04));
+
+    margin-bottom:15px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    font-size:24px;
+
+    border-left:6px solid #57c3ff;
+
+    transition:0.3s;
+}
+
+.routine-item:hover{
+    transform:translateX(12px);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(87,195,255,0.25),
+        rgba(255,255,255,0.08));
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+
+    margin-top:60px;
+
+    color:#b8dbff;
+
+    padding:30px;
+
+    border-top:1px solid rgba(255,255,255,0.15);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    LEO • PROFESSIONAL PET PROFILE
+</div>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Leo 🐕</h1>
+        <p>Elite Kanni Breed Companion Profile</p>
+    </div>
+
+    <h2 class="section-title">About Leo</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">Breed</div>
+            <div class="card-value">Kanni</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Gender</div>
+            <div class="card-value">Male</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Age</div>
+            <div class="card-value">4 Months</div>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">Special Trait</h2>
+
+    <div class="special">
+        🍚 Leo absolutely loves rice and never misses a meal!
+    </div>
+
+    <h2 class="section-title">Health Status</h2>
+
+    <div class="status-box">
+
+        <div class="status">
+            ✓ Healthy & Happy
+        </div>
+
+        <p>
+            Leo is an energetic Kanni puppy who enjoys
+            running, exploring, playing outdoors, and spending
+            time with family members.
+        </p>
+
+    </div>
+
+    <h2 class="section-title">Daily Routine</h2>
+
+    <p style="margin-bottom:20px;font-size:20px;color:#cce6ff;">
+        Leo's typical daily schedule and activities.
+    </p>
+
+    <div class="sticky">
+        Daily Activity Timeline
+    </div>
+
+    <div class="routine-item">🌅 Wake Up</div>
+    <div class="routine-item">🛁 Take a Bath</div>
+    <div class="routine-item">⚽ Play Outside</div>
+    <div class="routine-item">🏃 Exercise</div>
+    <div class="routine-item">🍖 Eat Food</div>
+    <div class="routine-item">😴 Rest</div>
+    <div class="routine-item">🚶 Go for a Walk</div>
+    <div class="routine-item">🎾 Play Time</div>
+    <div class="routine-item">🍚 Dinner</div>
+    <div class="routine-item">🌙 Sleep</div>
+
+    <div class="footer">
+        Leo • Kanni Dog Profile • Indian Dog • My Pet
+    </div>
+
+</div>
+
+</body>
+</html>
